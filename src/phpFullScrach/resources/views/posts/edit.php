@@ -13,7 +13,7 @@
                 <h5 class="mb-4">
                     投稿の編集画面
                 </h5>
-                <form action="">
+                <form method="POST" action=<?php echo "/update/".$post["id"]; ?>>
                     <fieldset>
                         <div class="form-group">
                             <label for="title">
@@ -23,7 +23,7 @@
                                 id = "title"
                                 name = "title"
                                 class = "form-control"
-                                values = "" 
+                                value =<?php echo $post["title"]; ?>  
                                 type="text"
                                 >
                         </div>
@@ -37,7 +37,7 @@
                                 name = "body"
                                 class = "form-control"
                                 rows = "10"
-                                ></textarea>
+                                ><?php echo $post["body"]; ?> </textarea>
                         </div>
                         
                         <div>

@@ -25,6 +25,12 @@ switch ($params[0]){
         $postsController->show($params[1]);
         break;
     case "edit":
-        $postsController->edit();
+        $postsController->edit($params[1]);
+        break;
+    case "update":
+        $postsController->update($params[1]);
+        break;
+    case "destroy":
+        $postsController->destroy($params[1]);
         break;
 }

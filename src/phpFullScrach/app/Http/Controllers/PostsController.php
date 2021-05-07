@@ -40,7 +40,6 @@ class PostsController
         $postmodel = new Post();
         $result = $postmodel->store();
 
-        $posts = $result;
         include($this->views."posts/create.php");
     }
 
@@ -57,9 +56,38 @@ class PostsController
         include($this->views."posts/show.php");
     }
 
-    public function edit()
+    public function edit($article_id)
     {
         $values = $this->init();
+
+        include($this->models.'Post.php');
+        $postmodel = new Post();
+        $result = $postmodel->edit($article_id);
+
+        $post = $result[0];
+
         include($this->views."posts/edit.php");
+    }
+
+    public function update($article_id)
+    {
+        $values = $this->init();
+
+        include($this->models.'Post.php');
+        $postmodel = new Post();
+        $result = $postmodel->update($article_id);
+
+        include($this->views."posts/edit.php");
+    }
+
+    public function destroy($article_id)
+    {
+        $values = $this->init();
+
+        include($this->models.'Post.php');
+        $postmodel = new Post();
+        $result = $postmodel->destroy($article_id);
+
+        header('Location: http://192.168.33.10/');
     }
 }

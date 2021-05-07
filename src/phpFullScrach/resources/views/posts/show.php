@@ -10,10 +10,10 @@
     <main>
         <div class="container ">
             <div class="my-4 text-right">
-                <a href="/edit" class="btn btn-primary">
+                <a href=<?php echo "/edit/".$post["id"] ?> class="btn btn-primary">
                     編集する
                 </a> 
-                <a href="" class="btn btn-danger">
+                <a href=<?php echo "/destroy/".$post["id"] ?>  class="btn btn-danger">
                     削除する
                 </a>   
             </div>
